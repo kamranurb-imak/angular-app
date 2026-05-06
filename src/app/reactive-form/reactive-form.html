@@ -1,0 +1,64 @@
+<h2>Basic Reactive-form!</h2>
+
+<div class="row mx-3">
+    <div class="col-md-4 flex flex-column">
+        <form action="" method="post">
+            <input type="text" name="name" class="form-control mb-3" [formControl]="name" placeholder="Name">
+            <input type="email" name="email" class="form-control mb-3" [formControl]="email" placeholder="Email">
+            <input type="password" name="password" class="form-control mb-3" [formControl]="password"
+                placeholder="Password">
+            <button type="button" class="btn btn-primary btnForm" (click)="displayValues()">Submit</button>
+            <button type="button" class="btn btn-primary btnForm" (click)="setValues()">Set Values</button>
+            <button type="button" class="btn btn-secondary btnForm"
+                (click)="name.reset(); email.reset(); password.reset()">Reset</button>
+
+        </form>
+        <div class="m-5 mt-2 mb-2">
+            <p>Name: {{ name.value }}</p>
+            <p>Email: {{ email.value }}</p>
+            <p>Password: {{ password.value }}</p>
+        </div>
+
+        <hr>
+    </div>
+    <div class="col-md-1 border-end"></div>
+    <div class="col-md-7 flex flex-column">
+        <h3> User Profile - Reactive Group Form</h3>
+        <form [formGroup]="userProfileForm" (ngSubmit)="onSubmit()">
+            <div class="row m-3">
+                <div class="col-md-4">
+                    <input type="text" name="userName" class=" form-control mb-3 " formControlName="userName" placeholder="Name">
+                    <br>
+                    <span *ngIf="userName?.invalid && (userName?.touched || userName?.dirty)" class="text-danger">
+                        Name is required.
+                    </span>
+                </div>
+                <div class="col-md-4">
+                    <input type="email" name="userEmail" class="form-control mb-3" formControlName="userEmail" placeholder="Email">
+                    <br>
+                    <span *ngIf="userEmail?.invalid && userEmail?.touched" class="text-danger">
+                        Email is required and must be valid.
+                    </span>
+                </div>
+                <div class="col-md-4">
+                    <input type="password" name="userPassword" class="form-control mb-3" formControlName="userPassword" placeholder="Password">
+                    <br>
+                    <span *ngIf="userPassword?.invalid && userPassword?.touched" class="text-danger">
+                        Password is required and must be at least 5 characters long.
+                    </span>
+                </div>
+                <div class="mt-2">
+                    <button type="submit" class="btn btn-primary btnForm">Submit</button>
+                    <button type="button" class="btn btn-secondary btnForm" (click)="setGroupValues()">Set Group
+                        Values</button>
+                </div>
+                <div class="m-5 mt-2 mb-2">
+                    <p>Name: {{ userProfileForm.value.userName }}</p>
+                    <p>Email: {{ userProfileForm.value.userEmail }}</p>
+                    <p>Password: {{ userProfileForm.value.userPassword }}</p>
+                </div>
+            </div>
+        </form>
+            <hr>
+    </div>
+</div>

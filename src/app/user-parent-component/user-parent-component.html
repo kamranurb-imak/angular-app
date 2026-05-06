@@ -1,0 +1,13 @@
+<h2>User Parent Component</h2>
+<div style="margin: 10px;">
+    <span>User Information</span>
+    <p style="margin: 20px;">Name: {{userInfo.name}}</p>
+    <p style="margin: 20px;">Age: {{userInfo.age}}</p>
+    <p style="margin: 20px;">Country: {{userInfo.country}}</p>
+    <p style="margin: 20px;">Gender: {{userInfo.gender}}</p>
+</div>
+
+<hr>
+<div>
+    <app-user-child-component [userInfo]="userInfo" (genderChange)="getGender($event)"></app-user-child-component>
+</div>

@@ -1,0 +1,34 @@
+<h1>Pipes</h1>
+<hr>
+<h3>{{title}}</h3>
+<h3>{{title | uppercase}}</h3>
+<h3>{{title | lowercase}}</h3>
+<h3>{{title | titlecase}}</h3>
+
+<hr>
+<h3>Current Date: {{date}}</h3>
+<h3>Current Date (define format): {{date | date:' dd/MM/yyyy HH:mm:ss'}}</h3>
+<h3>Current Date (short): {{date | date:'short'}}</h3>
+<h3>Current Date (long): {{date | date:'long'}}</h3>
+<h3>Current Date (fullDate): {{date | date:'fullDate' | uppercase }}</h3>
+<h3>Current Date (shortTime): {{date | date:'shortTime'}}</h3>
+<h3>Current Date (medium): {{date | date:'medium'}}</h3>
+
+<hr>
+<h3>Amount: {{amount}}</h3>
+<h3>Amount (currency): {{amount | currency}}</h3>
+<h3>Amount (currency with code): {{amount | currency:'EUR'}}</h3>
+<h3>Amount (currency with symbol): {{amount | currency:'PKR':'symbol'}}</h3>
+<h3>Amount (currency with code and no symbol): {{amount | currency:'UAE':'code'}}</h3>
+<h3>Amount (currency with code and no symbol and no decimal): {{amount | currency:'PKR':'code':'1.0-0'}}</h3>
+
+<hr>
+<h1>Custom Pipe - Currency Converter </h1>
+<h3>Amount: {{amount | currency: 'PKR'}}</h3>
+<h3>Amount in USD: {{amount | currencyConvertor:'USD'}}</h3>
+<h3>Amount in YEN: {{amount | currencyConvertor:'YEN'}}</h3>
+<h3>Amount in EUR: {{amount | currencyConvertor:'EUR'}}</h3>
+<h3>Amount in GBP: {{amount | currencyConvertor:'GBP'}}</h3>
+<h3>Amount in JPY: {{amount | currencyConvertor:'JPY'}}</h3>
+<h3>Amount in AUD: {{amount | currencyConvertor:'AUD'}}</h3>
+<h3>Amount in CAD: {{amount | currencyConvertor:'CAD'}}</h3>

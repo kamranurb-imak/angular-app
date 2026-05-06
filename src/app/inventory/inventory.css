@@ -1,0 +1,7 @@
+.custom-floating > label {
+    left: 12px; /* or whatever you want */
+}
+
+.custom-floating > .form-control {
+    padding-left: 1.25rem; /* adjust if needed */
+}

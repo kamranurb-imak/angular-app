@@ -1,0 +1,20 @@
+<p class="todo-header">TO DO LIST!</p>
+
+<input class="txt" type="text" [(ngModel)]="task" placeholder="Enter a task" />
+<button class="btn" (click)="addTask()">{{ btnText }}</button>
+
+<div class="task-container">
+    @for (t of todoList; track t.id) {
+        <div class="task">
+            <p>{{ t.task }}</p>
+            <div>
+                <button class="edit-btn" (click)="selectTask(t.id, t.task)">Edit</button> 
+                <button class="delete-btn" (click)="deleteTask(t.id)">Delete</button>
+            </div>
+        </div>
+
+    }
+    @empty {    
+    <p>No tasks added yet.</p>
+    }
+</div>

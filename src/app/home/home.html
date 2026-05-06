@@ -1,0 +1,13 @@
+<p>home works!</p>
+
+<div style="margin-top: 20px;">
+    <a class = "link" routerLink="/profile">Go to Profile - simple routerLink</a>
+</div>
+
+<div style="margin-top: 20px;">
+    <a [routerLink]="['/profile', { id: 123, name: 'Kamran' }]">Go to Profile Page with some Data - routerLink</a>
+</div>
+
+<div>
+    <button style="margin: 20px;" (click)="goToProfile()">Go To Profile from typescript</button>
+</div>

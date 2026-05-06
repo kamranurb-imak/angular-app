@@ -1,0 +1,59 @@
+<div class="row mx-3">
+    <div class="col-md-12 bg-body-tertiary p-3 rounded">
+        <h2>Inventory</h2>
+        <hr>
+        <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <div class="row">
+                <div class="col form-floating mb-3 ml-3">
+                    <input type="number" class="form-control" id="ProductId" placeholder="Product ID" 
+                    [(ngModel)]="inventoryData.productId" name="productId" tabindex="-1" disabled>
+                    <label for="ProductId" style="left:12px;">Product ID</label>
+                </div>
+                <div class="col form-floating">
+                    <input type="text" class="form-control" id="ProductName" placeholder="Product Name" 
+                           [(ngModel)]="inventoryData.productName" name="productName" required tabindex="1">
+                    <label for="ProductName" style="left:12px;">Product Name</label>
+                </div>
+                <div class="col form-floating">
+                    <input type="number" class="form-control" id="StockAvailable" placeholder="Stock Available"
+                           [(ngModel)]="inventoryData.stockAvailable" name="stockAvailable" required tabindex="2">
+                    <label for="StockAvailable" style="left:12px;">Stock Available</label>
+                </div>
+                <div class="col form-floating">
+                    <input type="number" class="form-control" id="ReorderStock" placeholder="Reorder Stock"
+                           [(ngModel)]="inventoryData.reorderStock" name="reorderStock" required tabindex="3">
+                    <label for="ReorderStock" style="left:12px;">Reorder Stock</label>
+                </div>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3" tabindex="4" [disabled]="!form.valid">Submit</button>
+            </div>
+        </form>
+    <div class="mt-3">
+        <h2>Inventory Details</h2>
+        <hr>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Product ID</th>                    
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Stock Available</th>
+                    <th scope="col">Reorder Stock</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of inventoryDto; let i = index">
+                    <th class="ps-3" scope="row">{{ item.productId }}</th>
+                    <td>{{ item.productName }}</td>
+                    <td>{{ item.stockAvailable }}</td>
+                    <td>{{ item.reorderStock }}</td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-outline-primary" [tabindex]="5 + (i * 2)" (click)="onEdit(item)">Edit</button>&nbsp;
+                        <button type="button" class="btn btn-sm btn-outline-danger" [tabindex]="6 + (i * 2)" (click)="onDelete(item.productId)">Delete</button>
+                    </td>
+                </tr>  
+            </tbody>
+        </table>
+    </div>
+</div>

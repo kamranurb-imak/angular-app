@@ -1,0 +1,27 @@
+<p>counter works!</p>
+
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <h3 class="counter" >Counter: {{ counterValue }}</h3>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <div style="display: flex; flex-direction: row; margin-top: 10px;">
+        <button (click)="increment()" class="btn bg-green">Increment</button>
+         <button (click)="reset()" class="btn bg-black">Reset</button>
+        <button (click)="decrement()" class="btn bg-red">Decrement</button>
+    </div>
+</div>
+
+<div>
+    <input type="text" placeholder="Enter text" class="input" #textInput/>
+    <hr>
+    <button (click)="logInputValue(textInput.value)" class="bg-blue">Log Input Value</button>
+    <hr>
+    <input class="" id="numberInput" type="number" 
+    (input)="onNumberChange($event)" 
+    (blur)="onBlurEvent($event)"
+    (focus)="focusInputField()"
+    (mouseenter)="onMouseEnter($event)" 
+    (mouseleave)="onMouseLeave()" 
+    placeholder="Enter a number" class="input"/>
+</div>

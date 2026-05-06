@@ -1,0 +1,15 @@
+<h3 style="color: blue;">User Child Component</h3>
+<div style="margin:10px">
+  <p>Name: {{userInfo?.name}}</p>
+  <p>Age: {{userInfo?.age}}</p>
+  <p>Country: {{userInfo?.country}}</p>
+  <p>Gender: {{userInfo?.gender}}</p>   
+    <div style="margin-top: 20px;">
+        <label for="gender">Gender:</label>
+        <select #genderId (change)="onGenderChange(genderId.value)" name="gender" ngModel required>
+            <option value="" selected>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+</div>
