@@ -1,3 +1,16 @@
-<h1 style="background-color: red;">login works!</h1>
+<h1 style="margin: 20px; margin-left: 540px; margin-top: 80px;">User Login</h1>
+<hr>
+<div class="m-6 col-md-5" style="margin: 20px; margin-left: 340px; border: 1px solid black; padding: 20px; border-radius: 5px; background-color: #f8f9fa;">
+    <input class="m-3 form-control" style="width: 50%;" type="text" placeholder="Username" #userName>
+    <input class="m-3 form-control" style="width: 50%;" type="password" placeholder="Password" #userPassword>
+    <button class="btn btn-primary" (click)="loginUser(userName.value, userPassword.value)">Login</button>
+    <div *ngIf="showValidationMessage">
+         <span style="color:red">Invalid username or password. Please try again.</span>
+         <br>
+         <span style="color: green;"> Temporary credentials - User/Password: kamran/kamran</span>
+    </div>
+   
+</div>
 
-<button (click)="login(loginCounter, loginRequestmodel)">Login</button>
+<hr>
+<button class="btn btn-secondary"  (click)="login(loginCounter, loginRequestmodel)">Test button</button>

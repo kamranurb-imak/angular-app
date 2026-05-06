@@ -1,5 +1,11 @@
-<app-header></app-header>
-<router-outlet />
+
+<div *ngIf="!isLoginSuccessful">
+    <app-login (getLoginInfo)="handleLogin($event)"></app-login>
+</div>
+<div *ngIf="isLoginSuccessful">
+    <app-header (logout)="handleLogout()"></app-header>
+    <router-outlet />
+</div>
 
 <!-- <button class="btn btn-primary" (click)="CounterIncrease()">Counter: {{counter}}</button>
 <app-life-cycle-hooks [counter]="counter"></app-life-cycle-hooks> -->

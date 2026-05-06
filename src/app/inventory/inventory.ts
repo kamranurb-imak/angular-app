@@ -1,5 +1,4 @@
-import { Component, inject, OnInit, ChangeDetectorRef, booleanAttribute } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Component, inject, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../services/product';
@@ -12,7 +11,6 @@ import { ProductService } from '../services/product';
   styleUrl: './inventory.css',
 })
 export class InventoryComponent implements OnInit {
-  private httpclient = inject(HttpClient);
   private cdr = inject(ChangeDetectorRef);
   private productService = inject(ProductService);
 

@@ -30,6 +30,6 @@ export const routes: Routes = [
     {path: 'inventory', component: InventoryComponent},
     {path: 'pipes', component: PipesComponent},
     {path: 'life-cycle-hooks', component: LifeCycleHooksComponent},
-    {path: '', component: HomeComponent},
+    {path: '', component: TodoListComponent},
     {path: '**', component: PageNotFoundComponent}
 ];
